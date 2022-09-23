@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a1dcff10ff.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <title>Dashboard-Cartao</title>
+</head>
+<body onload="credidCard()">
+    <div class="content-container">
+        <div class="content">           
+            
+            <h2>Cadastrar Cartao de Credito</h2>
+
+            <div class="credit-card">
+                <i class="fa-solid fa-microchip fa-2xl"></i>
+
+                <p> numero do cartão</p>
+                <h3 id="cardNumber"></h3>
+                
+                <div class="credit-card-content" >
+                    <div>
+                        <p> nome impresso no cartão</p>
+                        <h4 id="card-nome"></h4>
+                    </div>
+                    <div>
+                        <p> data expiração </p>
+                        <h4>01/23</h4>
+                    </div>
+
+
+                </div>
+            </div>
+            
+            <form action="">
+                <div class="form-group">
+                    <input class="input" id="nome" type="text" placeholder="Nome" value="Ricardo Taverna">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="number" placeholder="Numero Cartão" class="input" value="0123 4567 8910 2233">
+                </div>
+                <div class="form-credit-content">
+                    <div class="form-group" style="margin-right: 4rem ;">
+                        <input type="date" id="senha"placeholder="Expiração" class="input">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="senha" placeholder="Codigo de Segurança" class="input">
+                    </div>
+                </div>
+
+                <div class="login-btn-container">
+                    <button class="btn-secondary">Atualizar</button>
+                </div>
+            </form>
+           
+
+
+        </div>
+
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-ticket fa-2xl"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="../../js/credit-card.js"></script>
+</body>
+</html>

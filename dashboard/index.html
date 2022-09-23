@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a1dcff10ff.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="content-container">
+        <div id="googleMap" class="maps"></div>
+
+        <div class="content">
+            <h3>Tickets disponiveis:</h3>
+            <p>20</p>
+        </div>
+        <div class="content">
+            <h3 style="margin-bottom: 5px;">Proximos destinos</h3>
+            <div class="form-group">
+                <input type="text" placeholder="Partida">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Chegada">
+            </div>
+
+            <button class="btn-info">Procurar Rota</button>
+            <div style="margin-top: 30px;">
+                <button class="btn-primary">Usar Ticket</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a href=""><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+         </div>
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-ticket fa-2xl"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function myMap() {
+            var mapProp= {
+                center:new google.maps.LatLng(-25.43766, -49.26922),
+                zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOjBuXT9pTwBompamjvthY8NhCKdzMUNs&callback=myMap"></script>
+</body>
+</html>

@@ -2,16 +2,54 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Projeto</title>
+    <title>Cadastro</title>
+    <script src="https://kit.fontawesome.com/a1dcff10ff.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <div>
-        <input type="text" placeholder="Usuário">
-        <input type="text" placeholder="Nome">
-        <input type="text" placeholder="Sobrenome">
-        <input type="email" placeholder="E-mail">
-        <input type="password" id="senha" placeholder="Senha">
-        <input type="password" id="senha" placeholder="Confirmar Senha">
+    <div class="login-page">
+        <div class="login-container" style="background-image: url('../images/curitiba.jpg');">
+            <div class="login-card">
+                <form id="registro">
+                    <span class="login-logo">
+                        <img src="../images/logo2.png" alt="logo" width="50%">
+                    </span>
+                    <span class="login-form-title" style="margin: 30px 0;"> login </span>
+    
+                    <div class="form-group">
+                        <input id="user" class="input" type="text" placeholder="Usuário" name="usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome" class="input" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Sobrenome" class="input" name="sobrenome">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="E-mail" class="input" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input class="input" type="password" id="senha" placeholder="Senha" name="senha">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirma-senha" placeholder="Confirmar Senha" class="input">
+                    </div>
+
+                    <div class="login-btn-container">
+                        <button class="btn-secondary" type="button" onclick="registro()"> Registrar </button>
+                    </div>
+
+
+                </form>
+                    
+            </div>
+        </div>
+        
     </div>
+    <script src="../js/registro.js"></script>
 </body>
 </html>
