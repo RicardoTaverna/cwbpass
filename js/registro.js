@@ -1,8 +1,8 @@
-function registro(){
+async function registro(){
     let form = document.getElementById('registro')
     let data = new FormData(form)
 
-    fetch("../php/registro.php", {
+    await fetch("../php/registro.php", {
         method: "POST",
         body: data
     }).then( () => {

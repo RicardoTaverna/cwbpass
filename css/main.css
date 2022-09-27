@@ -85,6 +85,7 @@ footer {
     align-content: flex-start;
     overflow: auto;
     flex-direction: row;
+    
 }
 
 .footer-container {
@@ -276,7 +277,7 @@ box-shadow: 0px 10px 30px -7px #000000;
 
 .testimonials {
     background-color: var(--primary);
-    padding: 16px;
+    padding: 16px 0;
     margin: 16px 0;
 }
   

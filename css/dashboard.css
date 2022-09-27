@@ -60,6 +60,11 @@ input:focus{
     background: #fff;
 }
 
+a {
+    text-decoration: none;
+    padding-top: 0.5rem;
+}
+
 .form-group {
     margin-bottom: 10px; 
 }
