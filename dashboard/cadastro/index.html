@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="../../css/dashboard.css">
     <title>Dashboard-Cadastro</title>
 </head>
-<body>
+<body onload="isAuth()">
     <div class="content-container">
         <div class="content">
             <h2>Atualizar Cadastro</h2>
             <form id="form-atualizar">
                 <div class="form-group">
-                    <input id="user" class="input" type="text" placeholder="Usuário">
+                    <input id="user" class="input" type="text" placeholder="Usuário" name="usuario">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Nome" class="input">
+                    <input type="text" placeholder="Nome" class="input" name="nome">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Sobrenome" class="input">
+                    <input type="text" placeholder="Sobrenome" class="input" name="sobrenome">
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="E-mail" class="input">
+                    <input type="email" placeholder="E-mail" class="input" name="email">
                 </div>
                 <div class="login-btn-container">
-                    <button type="button" class="btn-secondary" onclick="atualizar_cadastro()">Atualizar</button>
+                    <button type="button" class="btn-secondary" onclick="atualizarCadastro()">Atualizar</button>
                 </div>
             </form>
 
@@ -56,14 +56,20 @@
            <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-           <a href=""><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+           <a href="cadastro/index.html"><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-           <a href=""><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+            <a href="cartao/index.html"><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+         </div>
+        <div class="footer-menu">
+           <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-           <a href=""><i class="fa-solid fa-ticket fa-2xl"></i></a>
+           <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl"></i></a>
         </div>
     </footer>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/usuario.js"></script>
 </body>
 </html>

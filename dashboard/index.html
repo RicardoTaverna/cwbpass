@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <title>Dashboard</title>
 </head>
-<body>
+<body onload="isAuth()">
     <div class="content-container">
         <div id="googleMap" class="maps"></div>
 
@@ -39,10 +39,10 @@
            <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-           <a href=""><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+           <a href="cadastro/index.html"><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-            <a href=""><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+            <a href="cartao/index.html"><i class="fa-solid fa-credit-card fa-2xl"></i></a>
          </div>
         <div class="footer-menu">
            <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
@@ -59,6 +59,8 @@
         }
     </script>
 
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOjBuXT9pTwBompamjvthY8NhCKdzMUNs&callback=myMap"></script>
 </body>
 </html>
