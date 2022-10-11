@@ -12,7 +12,7 @@ async function login(){
         body: data
     }).then(() => {
         localStorage.setItem(TOKEN_KEY, token);
-        console.log('token add ao storage')
+        window.location.href = "http://127.0.0.1/cwbpass/dashboard/";
     })
 }
 

@@ -1,16 +1,6 @@
 <?php
 
-    // nome = $_POST["nome"]
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "cwbpass";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include "conexao.php";
 
     $usuario = $_POST["usuario"];
     $nome = $_POST["nome"];
@@ -20,8 +10,12 @@
 
     $sql = "INSERT INTO usuarios (usuario, nome, sobrenome, senha, email) VALUES ('$usuario', '$nome', '$sobrenome', '$senha', '$email')";
 
+    $retorno["status"] = 201;
+    $retorno["message"] = "Produto adicionado no carrinho";
+    $objetoJSON = json_encode($retorno);
+
     if ($conn->query($sql) === TRUE) {
-        echo "Novo usuário adicionado";
+        echo $objetoJSON;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

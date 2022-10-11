@@ -13,10 +13,13 @@
     <div class="content-container">
         <div id="googleMap" class="maps"></div>
 
-        <div class="content">
-            <h3>Tickets disponiveis:</h3>
-            <p>20</p>
+        <div style="margin-top: 3rem; margin-bottom: 4rem;">
+            <div class="content">
+                <h3>Tickets disponiveis:</h3>
+                <p>20</p>
+            </div>
         </div>
+        
         <div class="content">
             <h3 style="margin-bottom: 5px;">Proximos destinos</h3>
             <div class="form-group">
@@ -31,6 +34,16 @@
                 <a href="ticket/index.html" class="btn-primary">Usar Ticket</a>
             </div>
         </div>
+        <div class="content">
+            <h3 style="margin-bottom: 5px;">Comprar Tickets</h3>
+            <form id="tickets">
+                <div class="form-group">
+                    <input type="number" placeholder="Tickets" id="quantidade" name="quantidade">
+                </div>
+                
+                <button type="button" class="btn-info" onclick="addTicket()">Adicionar ao carrinho</button>
+            </form>
+        </div>
 
     </div>
     
@@ -39,13 +52,19 @@
            <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-           <a href="cadastro/index.html"><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+            <a href="cadastro/index.html"><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
             <a href="cartao/index.html"><i class="fa-solid fa-credit-card fa-2xl"></i></a>
          </div>
         <div class="footer-menu">
-           <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
+            <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a href="shopping/index.html"><i class="fa-sharp fa-solid fa-cart-shopping fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl"></i></a>
         </div>
     </footer>
 
@@ -59,8 +78,8 @@
         }
     </script>
 
-    <script src="../js/auth.js"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/auth.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOjBuXT9pTwBompamjvthY8NhCKdzMUNs&callback=myMap"></script>
 </body>
 </html>

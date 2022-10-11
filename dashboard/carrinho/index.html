@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a1dcff10ff.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <title>Dashboard - Ticket</title>
+</head>
+<body onload="getCarrinho()">
+    <div class="content-container">
+        <div class="content">           
+            
+            <h2>Carrinho</h2>
+
+            <div class="shopping-cart">
+                <div class="shopping-cart-content">
+                    <img src="../../images/pay.jpg" alt="" srcset="" width="50">
+                    <p style="margin: 2rem;">Passagem</p>
+                    <p style="margin: 2rem;"> 23</p>
+                    <p style="margin: 1rem;">5.50</p>
+                </div>
+                
+                <button style="margin-top: 2rem;" class="btn-danger">deletar</button>
+                <span style="margin-left:10rem;">Total: </span>
+            </div>
+               
+            <h3 style="margin-top: 2rem;">Finalizar compra</h3>
+            <p>Total da compra: </p>
+            <button class="btn-info" style="margin-top: 1rem;" id="myBtn" type="button">Comprar</button>
+
+
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Finalizar compra</h3>
+                    <br>
+                    <span>Valor Total da Compra: R$</span>
+                    <br>
+                    <br>
+                    <span style="margin-top: 2rem;">Escolha a forma de pagamento</span>
+                    <br>
+                    <button class="btn-info" style="margin-top: 2rem;" onclick="cartaoCredito()">Cartão Credito</button>
+                    <button class="btn-secondary">PIX</button>
+                    <div id="cartaoCredito" style="margin-top: 3rem; display: none;">
+                        <button class="btn-secondary" style="margin-bottom: 1rem;">Utilizar Cartão Cadastrado</button>
+                        <form id="cartaocredito">
+                            <div class="form-group">
+                                <input class="input" id="nome" type="text" placeholder="Nome" name="nome">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="number" placeholder="Numero Cartão" class="input" name="numero">
+                            </div>
+                            <div class="form-credit-content">
+                                <div class="form-group" style="margin-right: 4rem ;">
+                                    <input type="date" id="date" placeholder="Expiração" class="input" name="data_expiracao">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="senha" placeholder="Codigo de Segurança" class="input" name="ccv">
+                                </div>
+                            </div>
+            
+                            <div class="login-btn-container">
+                                <button type="button" class="btn-secondary" onclick="sendCreditCart()">Comprar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-menu">
+           <a href=""><i class="fa-solid fa-bars fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a href="cadastro/index.html"><i class="fa-solid fa-user-astronaut fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a href="cartao/index.html"><i class="fa-solid fa-credit-card fa-2xl"></i></a>
+         </div>
+        <div class="footer-menu">
+            <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a href="carrinho/index.html"><i class="fa-sharp fa-solid fa-cart-shopping fa-2xl"></i></a>
+        </div>
+        <div class="footer-menu">
+            <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl"></i></a>
+        </div>
+    </footer>
+
+    <script src="../../js/carrinho.js"></script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+        modal.style.display = "block";  
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+</body>
+</html>
