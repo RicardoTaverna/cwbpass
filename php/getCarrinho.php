@@ -2,7 +2,7 @@
 
     include "conexao.php";
 
-    $query = "SELECT * FROM carrinho WHERE usuario = 8";
+    $query = "SELECT * FROM carrinho WHERE usuario = 9";
 
     $result = $conn->query($query);
 

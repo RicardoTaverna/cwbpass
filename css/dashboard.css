@@ -8,7 +8,7 @@
     --danger: #FF6B6B;
     --blackolive: #353831;
     --jet: #2D2D2A;
-    --flat: rgb(150, 150, 150);
+    --flat: rgb(119, 119, 119);
     --normal-font: 400;
     --bold-font: 600;
     --bolder-font: 900;
@@ -260,9 +260,10 @@ a {
     border-radius: 10px;
     overflow: hidden;
     padding: 30px 30px;
-    background: rgb(100,65,165);
-    background: linear-gradient(59deg, rgba(100,65,165,1) 0%, rgba(42,8,69,1) 100%);
-    -webkit-box-shadow: -5px 5px 15px 2px #000000; 
+    background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     box-shadow: -5px 5px 15px 2px #000000;
 }
 

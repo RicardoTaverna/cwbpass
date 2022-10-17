@@ -14,18 +14,10 @@
         <div class="content">           
             
             <h2>Carrinho</h2>
-
-            <div class="shopping-cart">
-                <div class="shopping-cart-content">
-                    <img src="../../images/pay.jpg" alt="" srcset="" width="50">
-                    <p style="margin: 2rem;">Passagem</p>
-                    <p style="margin: 2rem;"> 23</p>
-                    <p style="margin: 1rem;">5.50</p>
-                </div>
+            <div id="carrinho">
                 
-                <button style="margin-top: 2rem;" class="btn-danger">deletar</button>
-                <span style="margin-left:10rem;">Total: </span>
             </div>
+            
                
             <h3 style="margin-top: 2rem;">Finalizar compra</h3>
             <p>Total da compra: </p>
@@ -44,7 +36,7 @@
                     <span style="margin-top: 2rem;">Escolha a forma de pagamento</span>
                     <br>
                     <button class="btn-info" style="margin-top: 2rem;" onclick="cartaoCredito()">Cartão Credito</button>
-                    <button class="btn-secondary">PIX</button>
+                    <button class="btn-secondary" onclick="pix()">PIX</button>
                     <div id="cartaoCredito" style="margin-top: 3rem; display: none;">
                         <button class="btn-secondary" style="margin-bottom: 1rem;">Utilizar Cartão Cadastrado</button>
                         <form id="cartaocredito">
@@ -69,6 +61,11 @@
                         </form>
                     </div>
 
+                    <div id="pix" style="margin-top: 3rem; display: none;">
+                        <span>00020126440014br.gov.bcb.pix01119bhvp$7$#<br>:m0207devtool52040000530398654041.<br>005802BR5901a6006CIDADE62130509teste dev630469AA</span>
+                        <p style="text-align: center; margin-top: 1rem;">copie e cole o código pix</p>
+                    </div>
+
                 </div>
             </div>
 
@@ -90,7 +87,7 @@
             <a href="ticket/index.html"><i class="fa-solid fa-ticket fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
-            <a href="carrinho/index.html"><i class="fa-sharp fa-solid fa-cart-shopping fa-2xl"></i></a>
+            <a href="shopping/index.html"><i class="fa-sharp fa-solid fa-cart-shopping fa-2xl"></i></a>
         </div>
         <div class="footer-menu">
             <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl"></i></a>
