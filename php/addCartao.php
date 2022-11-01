@@ -1,8 +1,6 @@
 <?php
 
     include "conexao.php";
-
-    include "conexao.php";
     
     $token = $_POST["token"];
     $nome = $_POST["nome"];

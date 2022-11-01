@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/snack.css">
     <title>Dashboard - Ticket</title>
 </head>
 <body>
@@ -19,13 +20,15 @@
                 <img id="qrcode" class="qrcode" src=""/>
             </div>
             <div style="text-align: center; padding-top: 1rem;">
-                <button class="btn-primary">Usar Ticket</button>
+                <button class="btn-primary" onclick="useTicket()">Usar Ticket</button>
             </div>
                 
 
+            <div id="snackbar"></div>
         </div>
 
     </div>
+
     
     <footer class="footer">
         <div class="footer-menu">
@@ -50,5 +53,6 @@
 
 
     <script src="../../js/qrcode.js"></script>
+    <script src="../../js/ticket.js"></script>
 </body>
 </html>

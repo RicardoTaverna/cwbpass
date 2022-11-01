@@ -1,11 +1,25 @@
 function credidCard(){
-    let nome = document.getElementById("nome").value;
-    let nomeCartao = document.getElementById("card-nome");
-    nomeCartao.innerHTML = nome;
+    fetch("../../php/getCartao.php", {
+        method: "GET",
+    }).then(async (response) => {
 
-    let number = document.getElementById("number").value;
-    let cardNumber = document.getElementById("cardNumber")
-    cardNumber.innerHTML = number
+        data = await response.json()
+
+        let nome  = document.getElementById("nome")
+        nome.value = data.nome
+        let number = document.getElementById("number")
+        number.value = data.numero_cartao
+        let date = document.getElementById("date")
+        date.value = data.data_validade
+        let ccv = document.getElementById("ccv")
+        ccv.value = data.ccv
+
+        let nomeCartao = document.getElementById("card-nome")
+        nomeCartao.innerHTML = data.nome
+
+        let cardNumber = document.getElementById("cardNumber")
+        cardNumber.innerHTML = data.numero_cartao
+    })
 }
 
 function addCreditCart(){

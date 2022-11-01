@@ -1,3 +1,7 @@
+let quantidade = 0;
+let total = 0;
+let id_carrinho = 0;
+
 function getCarrinho(){
     let data = new FormData()
 
@@ -9,8 +13,9 @@ function getCarrinho(){
         method: "GET"
     }).then(async (response) => {
         data = await response.json()
-
-        let total = 5.50 * data.id.quantidade
+        quantidade = data.id.quantidade
+        total += 5.50 * quantidade
+        id_carrinho = data.id.id
 
         let conteudo = '<div class="shopping-cart">'
         conteudo += '<div class="shopping-cart-content">'
@@ -26,8 +31,37 @@ function getCarrinho(){
         let div = document.getElementById("carrinho")
         div.innerHTML += conteudo
             
+        let valorTotal = document.getElementById("valorTotal")
+        valorTotal.innerHTML += total
+
+        let quantidadeTotal = document.getElementById("quantidadeTotal")
+        quantidadeTotal.innerHTML += quantidade
     })
+
 }
+
+function openModal(){
+    let modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    modal.style.display = "block";  
+    
+    // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 
 function finalizarCompra(){
     console.log("compra finalizada")
@@ -64,4 +98,35 @@ function pix(){
     } else {
     divPix.style.display = "none";
     }
+}
+
+function getCartao(){
+    fetch("../../php/getCartao.php", {
+        method: "GET",
+    }).then(async (response) => {
+
+        data = await response.json()
+
+        let nome  = document.getElementById("nome")
+        nome.value = data.nome
+        let number = document.getElementById("number")
+        number.value = data.numero_cartao
+        let date = document.getElementById("date")
+        date.value = data.data_validade
+        let ccv = document.getElementById("ccv")
+        ccv.value = data.ccv
+    })
+}
+
+function finalizarCompra() {
+    data = new FormData()
+    data.append("quantidade", quantidade)
+    data.append("id_carrinho", id_carrinho)
+
+    fetch("../../php/addTicket.php", {
+        method: "POST",
+        body: data
+    }).then(() => {
+        window.location.href = "http://127.0.0.1/cwbpass/dashboard/";
+    })
 }
