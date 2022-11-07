@@ -7,20 +7,21 @@
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
-        $data[0];
+
         $retorno["id"];
         $retorno["quantidade"];
         $retorno["carrinho_id"];
         $retorno["linha"];
+        $i = 0;
         while($row = $result->fetch_assoc()) {
-            $retorno["id"] = $row["id"];
-            $retorno["quantidade"] = $row["quantidade"];
-            $retorno["carrinho_id"] = $row["id"];
-            $retorno["linha"] = key($result);
-            $data[key($row)] = $retorno;
+            $retorno[$i]["id"] = $row["id"];
+            $retorno[$i]["quantidade"] = $row["quantidade"];
+            $retorno[$i]["carrinho_id"] = $row["id"];
+            $retorno[$i]["linha"] = key($result);
+            $i++;
         }
     }
-    $objetoJSON = json_encode($data);
+    $objetoJSON = json_encode($retorno);
     echo $objetoJSON;
 
 ?>

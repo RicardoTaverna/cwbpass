@@ -13,29 +13,42 @@ function getCarrinho(){
         method: "GET"
     }).then(async (response) => {
         data = await response.json()
-        quantidade = data.id.quantidade
-        total += 5.50 * quantidade
-        id_carrinho = data.id.id
-
-        let conteudo = '<div class="shopping-cart">'
-        conteudo += '<div class="shopping-cart-content">'
-        conteudo += '<img src="../../images/pay.jpg" alt="" srcset="" width="50">'
-        conteudo += '<p style="margin: 2rem;">Passagem</p>'
-        conteudo += `<p style="margin: 2rem;"> ${data.id.quantidade}</p>`
-        conteudo += `<p style="margin: 1rem;">5.50</p>`
-        conteudo += '</div>'
-        conteudo += '<button style="margin-top: 2rem;" class="btn-danger">deletar</button>'
-        conteudo += `<span style="margin-left:8rem;">Total: R$${total}</span>`
-        conteudo += '</div>'
         
-        let div = document.getElementById("carrinho")
-        div.innerHTML += conteudo
+
+        for (let i=0; i<data.length; i++){
+            
+            quantidade += 1 * data[i].quantidade
+            let quantidade_total = data[i].quantidade
+            console.log(quantidade)
+            
+            total += 5.50 * quantidade_total
+            id_carrinho = data[i].id
+
+            let total_carrinho = 5.50 * data[i].quantidade
+
+            let conteudo = '<div class="shopping-cart">'
+            conteudo += '<div class="shopping-cart-content">'
+            conteudo += '<img src="../../images/pay.jpg" alt="" srcset="" width="50">'
+            conteudo += '<p style="margin: 2rem;">Passagem</p>'
+            conteudo += `<p style="margin: 2rem;"> ${data[i].quantidade}</p>`
+            conteudo += `<p style="margin: 1rem;">5.50</p>`
+            conteudo += '</div>'
+            conteudo += '<button style="margin-top: 2rem;" class="btn-danger">deletar</button>'
+            conteudo += `<span style="margin-left:7.5rem;">Total: R$${total_carrinho}</span>`
+            conteudo += '</div>'
+            
+            
+            let div = document.getElementById("carrinho")
+            div.innerHTML += conteudo
+        }
+
             
         let valorTotal = document.getElementById("valorTotal")
         valorTotal.innerHTML += total
 
         let quantidadeTotal = document.getElementById("quantidadeTotal")
         quantidadeTotal.innerHTML += quantidade
+
     })
 
 }
@@ -60,11 +73,6 @@ function openModal(){
             modal.style.display = "none";
         }
     }
-}
-
-
-function finalizarCompra(){
-    console.log("compra finalizada")
 }
 
 function cartaoCredito(){
