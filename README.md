@@ -4,9 +4,9 @@
 </h1>
 
 
-<h2 align="center" id="about">Ops | Back-end Python Developer</h2>
+<h2 align="center" id="about">CWBPass</h2>
 
-<p align="center">Challenge project using nameko and fastapi.</p>
+<p align="center">Projeto para matéria de Programação Web.</p>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/RicardoTaverna/cwbpass?color=%23008080&style=for-the-badge">
@@ -33,27 +33,22 @@
 * [Project](#🚀-project)
     * [Management](#management)
     * [Requirements](#requirements)
-    * [Implementation/Running]
-    * [Tests]
-* [Questions and Answers]
 * [Licence](#📝-licence)
 
 ## 🛠 Technologies
 
-- <a href="https://www.docker.com">
-    <img alt="Docker" src="https://img.shields.io/badge/Docker-v20.10-blue?style=for-the-badge">
-</a>
+- <img alt="PHP" src="https://img.shields.io/badge/PHP-v8.0.1-blue?style=for-the-badge">
+- <img alt="MySQL" src="https://img.shields.io/badge/MySQL-v5.7.24-blue?style=for-the-badge">
+- <img alt="MAMP" src="https://img.shields.io/badge/MAMP-v5.0.5-blue?style=for-the-badge">
+
 
 ## 🚀 Project
 
 ### Requirements
-- 
+- Serviço XAMP/MAMP ativo com servidor e banco de dados ligados.
+- copiar o projeto para a pasta do servidor htdocs ou http
+- acessar pelo navegador pela porta 80 http://127.0.0.1/cwbpass/
 
-## 💡 Questions
->✓ Question 1: Why is performance degrading as the test run longer?
-<br>
-
->✓ Question 2: How do you fix it?
 
 ## 📝 licence
 
